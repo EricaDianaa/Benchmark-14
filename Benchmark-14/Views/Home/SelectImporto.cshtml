@@ -1,0 +1,64 @@
+﻿@using Benchmark_14.Models
+<link href="~/Views/Shared/StyleSheet1.css" rel="stylesheet" />
+
+<h2>Importi maggiori di 400 euro</h2>
+<div class="bg-success">
+    <div class="container table table-bordered border border-dark">
+        <div class="row">
+
+            <div class="col-2">
+                <strong>Nome </strong>
+            </div>
+
+            <div class="col-2">
+                <strong>Cognome </strong>
+            </div>
+
+            <div class="col-2">
+                <strong>Indirizzo </strong>
+            </div>
+            <div class="col-2">
+                <strong>Data violazione</strong>
+
+            </div>
+            <div class="col-2">
+                <strong>Importo</strong>
+            </div>
+
+            <div class="col-2">
+                <strong>Decurtamento punti</strong>
+
+            </div>
+        </div>
+    </div>
+    @foreach (Dipartimento item in Model)
+    {
+        <div class="container table table-bordered border border-dark">
+            <div class="row">
+
+                <div class="col-2">
+                    @item.Nome
+                </div>
+
+                <div class="col-2">
+                    @item.Cognome
+
+                </div>
+                <div class="col-2">
+                    @item.Indirizzo
+                </div>
+                <div class="col-2">
+                    @item.DataViolazione
+                </div>
+
+                <div class="col-2">
+                    @item.Importo
+
+                </div>
+                <div class="col-2">
+                    @item.DecurtamentoPunti
+                </div>
+            </div>
+        </div>
+    }
+</div>

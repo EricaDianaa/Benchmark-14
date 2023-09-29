@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "RegistroVerbali";
+}
+
+<h2>RegistroVerbali</h2>
+<div class="d-flex w-100">
+
+    <div>
+        @Html.Action("SelectVerbaliPerson")
+    </div>
+
+    <div>
+        @Html.Action("SelectDecurtamentoPunti")
+    </div>
+
+</div>
+
+<div class="d-flex">
+    <div>
+        @Html.Action("SelectWhereDecurtamentoPunti")
+    </div>
+
+    <div>
+        @Html.Action("SelectImporto")
+    </div>
+
+</div>

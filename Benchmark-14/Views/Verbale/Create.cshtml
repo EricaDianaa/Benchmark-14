@@ -1,0 +1,99 @@
+﻿@model Benchmark_14.Models.Verbale
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="text-center">Crea un verbale</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal d-flex flex-column justify-content-center bg-info  mx-auto  rounded-5 w-50 border border-dark">
+        <h4 class="text-center">Verbale</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.IdVerbale, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IdVerbale, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IdVerbale, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group mx-auto">
+            @Html.LabelFor(model => model.DataViolazione, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataViolazione, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DataViolazione, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group mx-auto">
+            @Html.LabelFor(model => model.DataTransazioneVerbale, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.DataTransazioneVerbale, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DataTransazioneVerbale, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group mx-auto">
+            @Html.LabelFor(model => model.IndirizzoViolazione, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.IndirizzoViolazione, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IndirizzoViolazione, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group mx-auto">
+            @Html.LabelFor(model => model.NominativoAgente, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.NominativoAgente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NominativoAgente, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group mx-auto">
+            @Html.LabelFor(model => model.Importo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Importo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Importo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group mx-auto">
+            @Html.LabelFor(model => model.DecurtamentoPunti, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.DecurtamentoPunti, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DecurtamentoPunti, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group mx-auto">
+            @Html.LabelFor(model => model.IdAnagrafe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.IdAnagrafe, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IdAnagrafe, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group mx-auto">
+            @Html.LabelFor(model => model.IdViolazioni, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.IdViolazioni, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IdViolazioni, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group mx-auto">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

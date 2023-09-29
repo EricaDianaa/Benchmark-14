@@ -1,0 +1,35 @@
+﻿@using Benchmark_14.Models
+
+@Styles.Render("~Views/Shared/NewLayout.cshtml")
+<h2>Totale decurtamento punti per trasgressore</h2>
+<div class="bg-success">
+    <div class="container table table-bordered border border-dark ">
+        <div class="row">
+
+            <div class="col-6">
+                <strong>Totale decurtamento punti</strong>
+            </div>
+
+            <div class="col-6">
+                <strong>Nome</strong>
+
+            </div>
+        </div>
+    </div>
+    @foreach (Dipartimento tipo in Model)
+    {
+        <div class="container table table-bordered border border-dark">
+            <div class="row">
+
+                <div class="col-6">
+                    @tipo.TotDecurtamentoPunti
+                </div>
+
+                <div class="col-6">
+                    @tipo.Nome
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
