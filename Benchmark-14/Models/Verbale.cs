@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Benchmark_14.Models
 {
@@ -33,7 +34,7 @@ namespace Benchmark_14.Models
 
         public static List<Verbale> ListVerbale=new List<Verbale>();
 
-        public static void Insert(Verbale p, string messaggio)
+        public static void Insert(Verbale p, string messaggio,string anagrafe,string violazione)
         {
 
             
@@ -52,8 +53,8 @@ namespace Benchmark_14.Models
                 cmd.Parameters.AddWithValue("DataTransizioneVerbale", p.DataTransazioneVerbale);
                 cmd.Parameters.AddWithValue("Importo", p.Importo);
                 cmd.Parameters.AddWithValue("DecurtamentoPunti", p.DecurtamentoPunti);
-                cmd.Parameters.AddWithValue("IdAnagrafica", p.IdAnagrafe);
-                cmd.Parameters.AddWithValue("IdViolazione", p.IdViolazioni);
+                cmd.Parameters.AddWithValue("IdAnagrafica", anagrafe);
+                cmd.Parameters.AddWithValue("IdViolazione", violazione);
 
                 int inserimentoEffettuato = cmd.ExecuteNonQuery();
 
@@ -93,8 +94,11 @@ namespace Benchmark_14.Models
                 prod.DecurtamentoPunti = Convert.ToInt16(sqlreader["DecurtamentoPunti"]);
                 ListVerbale.Add(prod);
             }
+
         }
 
+      
+        
 
     }
 }

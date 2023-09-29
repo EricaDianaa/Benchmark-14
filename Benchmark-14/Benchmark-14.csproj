@@ -196,7 +196,7 @@
     <Content Include="Views\Home\AnagrafeSelect.cshtml" />
     <Content Include="Views\Home\VerbaleSelect.cshtml" />
     <Content Include="Views\Home\ViolazioneSelect.cshtml" />
-    <Content Include="Views\Home\ReturnPartial.cshtml" />
+    <Content Include="Views\Verbale\s.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

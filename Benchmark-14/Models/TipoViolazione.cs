@@ -88,6 +88,20 @@ namespace Benchmark_14.Models
             return ListViolazioni;
         }
 
+        public static List<SelectListItem> DropdownViolazioni = new List<SelectListItem>();
+
+        public  static void Dropdown()
+        {
+            List<TipoViolazione> tipoViolazione = new List<TipoViolazione>();
+              tipoViolazione=  TipoViolazione.Selected();
+                foreach (TipoViolazione item in tipoViolazione)
+                {
+                    SelectListItem l = new SelectListItem { Text = item.Descrizione, Value = item.IdViolazione.ToString() };
+                   DropdownViolazioni.Add(l);
+                }
+              
+            
+        }
        
     }
 }

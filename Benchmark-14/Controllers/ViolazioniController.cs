@@ -37,22 +37,11 @@ namespace Benchmark_14.Controllers
             return PartialView(TipoViolazione.ListViolazioni);
         }
 
-   
-        //    public List<SelectListItem> DropdownViolazioni
-        //    {
-        //    get
-        //    {
-        //        List<TipoViolazione> tipoViolazione = new List<TipoViolazione>();
-        //        tipoViolazione = TipoViolazione.Selected();
-        //        List<TipoViolazione> selectList = new List<TipoViolazione>();
-        //        foreach (TipoViolazione item in tipoViolazione)
-        //        {
-        //            SelectListItem l = new SelectListItem { Text = item.Descrizione, Value = item.IdViolazione.ToString() };
-        //            selectList.Add(l);
-        //        }
-        //        return selectList;
-        //    }
-        //}
+        public ActionResult Delete()
+        {
+            return View();                                                                                 
+        }           
+           
     }
 
 }
