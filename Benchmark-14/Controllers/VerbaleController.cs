@@ -15,9 +15,6 @@ namespace Benchmark_14.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-          
-            
-
             return View();
         }
 

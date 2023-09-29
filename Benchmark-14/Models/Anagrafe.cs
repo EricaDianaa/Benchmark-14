@@ -51,7 +51,28 @@ namespace Benchmark_14.Models
             catch (Exception ex) { messaggio = $"{ex}"; }
             finally { conn.Close(); }
         }
-      
+        public static void Select()
+        {
+            string connection = ConfigurationManager.ConnectionStrings["ConnectionDB"]
+             .ConnectionString.ToString();
+            SqlConnection conn = new SqlConnection(connection);
+            SqlCommand cmd = new SqlCommand("select * from ANAGRAFICA ", conn);
+
+            SqlDataReader sqlreader;
+            conn.Open();
+
+            sqlreader = cmd.ExecuteReader();
+
+
+            while (sqlreader.Read())
+            {
+                TipoViolazione prod = new TipoViolazione();
+                prod.IdViolazione = Convert.ToInt16(sqlreader["IdViolazione"]);
+                prod.Descrizione = sqlreader["Descrizione"].ToString();
+              
+            }
+        }
+
 
     }
 }

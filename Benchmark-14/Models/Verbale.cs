@@ -65,10 +65,7 @@ namespace Benchmark_14.Models
             catch (Exception ex) { messaggio = $"{ex}"; }
             finally { conn.Close(); }
         }
-      public static void Select()
-        {
-
-        }
+    
         
     }
 }
