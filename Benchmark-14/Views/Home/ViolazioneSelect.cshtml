@@ -1,0 +1,38 @@
+﻿@using Benchmark_14.Models
+@{
+    ViewBag.Title = "ViolazioneSelect";
+}
+
+<h2>ViolazioneSelect</h2>
+<div class="bg-success">
+    <div class="container table table-bordered border border-dark">
+        <div class="row">
+
+            <div class="col-6">
+                <strong>Id Violazione </strong>
+            </div>
+
+            <div class="col-6">
+                <strong>Descrizione </strong>
+            </div>
+        </div>
+    </div>
+    @foreach (TipoViolazione item in Model)
+    {
+        <div class="container table table-bordered border border-dark">
+            <div class="row">
+
+                <div class="col-6">
+                    @item.IdViolazione
+                </div>
+
+                <div class="col-6">
+                    @item.Descrizione
+
+                </div>
+            </div>
+            
+
+            </div>
+            }
+        </div>

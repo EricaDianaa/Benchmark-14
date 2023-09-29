@@ -24,7 +24,7 @@ namespace Benchmark_14.Controllers
             Dipartimento.ListTotVerbali.Clear();
             Dipartimento.SelectVerbaliPerson();
             
-            return View(Dipartimento.ListTotVerbali);
+            return PartialView(Dipartimento.ListTotVerbali);
 
         }
 
@@ -33,7 +33,7 @@ namespace Benchmark_14.Controllers
             Dipartimento.ListTotDecurtamentoPunti.Clear();
             Dipartimento.SelectDecurtamentoPunti();
 
-            return View(Dipartimento.ListTotDecurtamentoPunti);
+            return PartialView(Dipartimento.ListTotDecurtamentoPunti);
 
         }
 
@@ -42,7 +42,7 @@ namespace Benchmark_14.Controllers
             Dipartimento.ListWhereDecurtamentoPunti.Clear();
             Dipartimento.SelectWhereDecurtamentoPunti();
 
-            return View(Dipartimento.ListWhereDecurtamentoPunti);
+            return PartialView(Dipartimento.ListWhereDecurtamentoPunti);
 
         }
 
@@ -51,10 +51,40 @@ namespace Benchmark_14.Controllers
             Dipartimento.ListImporto.Clear();
             Dipartimento.SelectImporto();
 
-            return View(Dipartimento.ListImporto);
+            return PartialView(Dipartimento.ListImporto);
 
         }
 
+        public ActionResult AnagrafeSelect()
+        {
+            Anagrafe.ListAnagrafe.Clear();
+            Anagrafe.Select();
 
+            return View(Anagrafe.ListAnagrafe);
+
+        }
+        public ActionResult VerbaleSelect()
+        {
+            Verbale.ListVerbale.Clear();
+            Verbale.Select();
+
+            return View(Verbale.ListVerbale);
+
+        }
+        public ActionResult ViolazioneSelect()
+        {
+            TipoViolazione.ListViolazioni.Clear();
+            TipoViolazione.Select();
+
+            return View(TipoViolazione.ListViolazioni);
+
+        }
+
+        public ActionResult ReturnPartial()
+        {
+            return PartialView("SelectVerbaliPerson");
+
+        }
     }
+
 }

@@ -1,0 +1,66 @@
+﻿@using Benchmark_14.Models
+@{
+    ViewBag.Title = "AnagrafeSelect";
+}
+
+<h2>AnagrafeSelect</h2>
+<div class="bg-success">
+    <div class="container table table-bordered border border-dark">
+        <div class="row">
+
+            <div class="col-2">
+                <strong>Id Anagrafe</strong>
+            </div>
+
+            <div class="col-2">
+                <strong>Nome Cognome </strong>
+            </div>
+
+            <div class="col-2">
+                <strong>Indirizzo </strong>
+            </div>
+            <div class="col-2">
+                <strong>Città</strong>
+
+            </div>
+            <div class="col-2">
+                <strong>CAP</strong>
+            </div>
+
+            <div class="col-2">
+                <strong>Codice Fiscale</strong>
+
+            </div>
+        </div>
+    </div>
+    @foreach (Anagrafe item in Model)
+    {
+        <div class="container table table-bordered border border-dark">
+            <div class="row">
+
+                <div class="col-2">
+                 @item.IdPersona
+                </div>
+
+                <div class="col-2">
+                    @item.Nome   @item.Cognome
+
+                </div>
+                <div class="col-2">
+                    @item.Indirizzo
+                </div>
+                <div class="col-2">
+                    @item.Città
+                </div>
+
+                <div class="col-2">
+                    @item.CAP
+
+                </div>
+                <div class="col-2">
+                    @item.CodiceFiscale
+                </div>
+            </div>
+        </div>
+    }
+</div>

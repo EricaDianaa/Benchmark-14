@@ -193,6 +193,10 @@
     <Content Include="Views\Home\SelectWhereDecurtamentoPunti.cshtml" />
     <Content Include="Views\Home\SelectImporto.cshtml" />
     <Content Include="Views\Shared\NewLayout.cshtml" />
+    <Content Include="Views\Home\AnagrafeSelect.cshtml" />
+    <Content Include="Views\Home\VerbaleSelect.cshtml" />
+    <Content Include="Views\Home\ViolazioneSelect.cshtml" />
+    <Content Include="Views\Home\ReturnPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

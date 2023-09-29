@@ -1,0 +1,81 @@
+﻿@using Benchmark_14.Models
+@{
+    ViewBag.Title = "VerbaleSelect";
+}
+
+<h2>VerbaleSelect</h2>
+
+<div class="bg-success">
+    <div class="container table table-bordered border border-dark">
+        <div class="row">
+
+            <div class="col">
+                <strong>Id Verbale </strong>
+            </div>
+
+            <div class="col">
+                <strong>Data  Violazione</strong>
+            </div>
+
+            <div class="col">
+                <strong>Indirizzo violazione </strong>
+            </div>
+            <div class="col">
+                <strong>Data Transazione Verbale</strong>
+
+            </div>
+            <div class="col">
+                <strong>Importo</strong>
+            </div>
+
+            <div class="col">
+                <strong>Decurtamento Punti</strong>
+
+            </div>
+            <div class="col">
+                <strong>Id Anagrafe</strong>
+
+            </div>
+            <div class="col">
+                <strong>Id Verbali</strong>
+
+            </div>
+        </div>
+    </div>
+    @foreach (Verbale item in Model)
+    {
+        <div class="container table table-bordered border border-dark">
+            <div class="row">
+
+                <div class="col">
+                    @item.IdVerbale
+                </div>
+
+                <div class="col">
+                    @item.DataViolazione
+
+                </div>
+                <div class="col">
+                    @item.IndirizzoViolazione
+                </div>
+                <div class="col">
+                    @item.DataTransazioneVerbale
+                </div>
+
+                <div class="col">
+                    @item.Importo
+
+                </div>
+                <div class="col">
+                    @item.DecurtamentoPunti
+                </div>
+                <div class="col">
+                    @item.IdAnagrafe
+                </div>
+                <div class="col">
+                    @item.IdViolazioni
+                </div>
+            </div>
+        </div>
+    }
+</div>

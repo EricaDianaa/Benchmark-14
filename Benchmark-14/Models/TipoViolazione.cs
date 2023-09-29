@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Benchmark_14.Models
 {
@@ -28,7 +29,7 @@ namespace Benchmark_14.Models
                 cmd.Connection = conn;
                 cmd.CommandText = "INSERT INTO TIPOVIOLAZIONE VALUES(@Descrizione)";
                 cmd.Parameters.AddWithValue("Descrizione", p.Descrizione);
-             
+
 
                 int inserimentoEffettuato = cmd.ExecuteNonQuery();
 
@@ -47,7 +48,7 @@ namespace Benchmark_14.Models
              .ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connection);
             SqlCommand cmd = new SqlCommand("select * from TIPOVIOLAZIONE ", conn);
-     
+
             SqlDataReader sqlreader;
             conn.Open();
 
@@ -63,5 +64,30 @@ namespace Benchmark_14.Models
                 ListViolazioni.Add(prod);
             }
         }
+        public static List<TipoViolazione> Selected()
+        {
+            string connection = ConfigurationManager.ConnectionStrings["ConnectionDB"]
+             .ConnectionString.ToString();
+            SqlConnection conn = new SqlConnection(connection);
+            SqlCommand cmd = new SqlCommand("select * from TIPOVIOLAZIONE ", conn);
+
+            SqlDataReader sqlreader;
+            conn.Open();
+
+            sqlreader = cmd.ExecuteReader();
+
+
+            while (sqlreader.Read())
+            {
+
+                TipoViolazione prod = new TipoViolazione();
+                prod.IdViolazione = Convert.ToInt16(sqlreader["IdViolazione"]);
+                prod.Descrizione = sqlreader["Descrizione"].ToString();
+                ListViolazioni.Add(prod);
+            }
+            return ListViolazioni;
+        }
+
+       
     }
 }

@@ -31,6 +31,7 @@ namespace Benchmark_14.Models
         public   int  TotVerbali { get; set; }
         public  string Nome { get; set; }
 
+        public static List<Verbale> ListVerbale=new List<Verbale>();
 
         public static void Insert(Verbale p, string messaggio)
         {
@@ -65,7 +66,35 @@ namespace Benchmark_14.Models
             catch (Exception ex) { messaggio = $"{ex}"; }
             finally { conn.Close(); }
         }
-    
-        
+        public static void Select()
+        {
+            string connection = ConfigurationManager.ConnectionStrings["ConnectionDB"]
+             .ConnectionString.ToString();
+            SqlConnection conn = new SqlConnection(connection);
+            SqlCommand cmd = new SqlCommand("select * from VERBALE ", conn);
+
+            SqlDataReader sqlreader;
+            conn.Open();
+
+            sqlreader = cmd.ExecuteReader();
+
+
+            while (sqlreader.Read())
+            {
+                Verbale prod = new  Verbale();
+                prod.IdVerbale = Convert.ToInt16(sqlreader["IdVerbale"]);
+                prod.DataTransazioneVerbale = Convert.ToDateTime(sqlreader["DataTransizioneVerbale"]);
+                prod.NominativoAgente = sqlreader["NominativoAgente"].ToString();
+                prod.IndirizzoViolazione = sqlreader["IndirizzoViolazione"].ToString();
+                prod.DataViolazione = Convert.ToDateTime(sqlreader["DataViolazione"]);
+                prod.Importo = Convert.ToDecimal(sqlreader["Importo"].ToString());
+                prod.IdViolazioni = Convert.ToInt32(sqlreader["IdViolazione"]);
+                prod.IdAnagrafe = Convert.ToInt16(sqlreader["IdAnagrafica"]);
+                prod.DecurtamentoPunti = Convert.ToInt16(sqlreader["DecurtamentoPunti"]);
+                ListVerbale.Add(prod);
+            }
+        }
+
+
     }
 }

@@ -4,25 +4,29 @@
 }
 
 <h2>RegistroVerbali</h2>
-<div class="d-flex w-100">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6" id="1">
 
-    <div>
-        @Html.Action("SelectVerbaliPerson")
+            <p>  @Html.Action("SelectVerbaliPerson")</p>
+        </div>
+
+        <div class="col-6" id="2">
+            @Html.Action("SelectDecurtamentoPunti")
+        </div>
     </div>
-
-    <div>
-        @Html.Action("SelectDecurtamentoPunti")
-    </div>
-
 </div>
 
-<div class="d-flex">
-    <div>
-        @Html.Action("SelectWhereDecurtamentoPunti")
-    </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6" id="3">
+            @Html.Action("SelectWhereDecurtamentoPunti")
+        </div>
 
-    <div>
-        @Html.Action("SelectImporto")
+        <div class="col-6" id="3">
+            @Html.Action("SelectImporto")
+        </div>
     </div>
-
 </div>
+
+@*<button>@Html.ActionLink($"{@Html.Action("SelectImporto")}", "Home")</button>*@
