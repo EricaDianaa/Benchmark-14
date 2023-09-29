@@ -19,17 +19,20 @@
         <div class="container table table-bordered border border-secondary bg-white ">
             <div class="row">
 
-                <div class="col-4">
+                <div class="col-3">
                     @tipo.IdViolazione
                 </div>
 
-                <div class="col-4">
+                <div class="col-3">
                     @tipo.Descrizione
 
                 </div>
 
-                <div class="col-4">
-                    <a href="/Delete?IdViolazione=@tipo.IdViolazione" class="btn btn-danger bg-danger">Elimina</a>
+                <div class="col-3">
+                    <a href="Delete?IdViolazione=@tipo.IdViolazione" class="btn btn-danger bg-danger">Elimina</a>
+                </div>
+                <div class="col-3">
+                    <a href="Edit?IdViolazione=@tipo.IdViolazione" class="btn btn-danger bg-primary">Modifica</a>
                 </div>
             </div>
         </div>

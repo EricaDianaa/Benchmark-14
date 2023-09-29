@@ -102,6 +102,47 @@ namespace Benchmark_14.Models
               
             
         }
-       
+
+        public static void SelectWhereId()
+        {
+            string connection = ConfigurationManager.ConnectionStrings["ConnectionDB"]
+         .ConnectionString.ToString();
+            SqlConnection conn = new SqlConnection(connection);
+            SqlCommand cmd1 = new SqlCommand("select * from TIPOVIOLAZIONE where IdViolazione=@id", conn);
+            SqlDataReader sqlreader1;
+            conn.Open();
+
+            cmd1.Parameters.AddWithValue("id", HttpContext.Current.Request.QueryString["IdViolazione"]);
+            sqlreader1 = cmd1.ExecuteReader();
+      TipoViolazione prod = new TipoViolazione();
+            while (sqlreader1.Read())
+            {
+                TipoViolazione.ListViolazioni.Clear();
+          
+                prod.IdViolazione = Convert.ToInt16(sqlreader1["IdViolazione"]);
+                prod.Descrizione = sqlreader1["Descrizione"].ToString();
+              
+
+            }
+            ListViolazioni.Add(prod);
+        }
+
+        public static void Elimina()
+        {
+            string connection = ConfigurationManager.ConnectionStrings["ConnectionDB"]
+            .ConnectionString.ToString();
+            SqlConnection conn = new SqlConnection(connection);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "DELETE FROM TIPOVIOLAZIONE where IdViolazione =@id";
+            cmd.Parameters.AddWithValue("id", HttpContext.Current.Request.QueryString["IdViolazione"]);
+
+            conn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+        }
+
     }
 }

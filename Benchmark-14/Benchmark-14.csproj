@@ -197,6 +197,7 @@
     <Content Include="Views\Home\VerbaleSelect.cshtml" />
     <Content Include="Views\Home\ViolazioneSelect.cshtml" />
     <Content Include="Views\Verbale\s.cshtml" />
+    <Content Include="Views\Violazioni\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
